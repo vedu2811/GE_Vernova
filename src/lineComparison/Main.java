@@ -3,12 +3,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String args[]){
         System.out.println("Welcome to Line Comparison");
-        Point p1=getPoint();
-        Point p2=getPoint();
-        System.out.println(p1);
-        System.out.println(p2);
+        Main n1=new Main();
+        Line l1=new Line(n1.getPoint(),n1.getPoint());
+        l1.calculateLength();
     }
-    public static Point getPoint(){
+    public Point getPoint(){
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter x coordinate");
         double x1=sc.nextDouble();
