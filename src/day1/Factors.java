@@ -1,3 +1,5 @@
+package day1;
+
 import java.util.*;
 public class Factors {
     public static void main(String args[]){

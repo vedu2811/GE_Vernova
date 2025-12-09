@@ -1,3 +1,5 @@
+package day1;
+
 import java.util.Scanner;
 public class QuotientAndRemainder {
     public static void main(String args[]){
