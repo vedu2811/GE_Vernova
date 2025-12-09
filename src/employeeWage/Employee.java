@@ -6,6 +6,8 @@ public class Employee {
     int halfDay=4;
     int hourlyPay=20;
     int dailySalary = 0;
+    int monthlyWage=0;
+    int workingDays=20;
     public void calculateAttendance(){
         if(((Math.random()*100)%3)==0){
             dailyAttendance=0;
@@ -32,5 +34,9 @@ public class Employee {
                 System.out.println("No Pay");
                 break;
         }
+    }
+    public void monthlyWage(){
+        monthlyWage=workingDays*dailySalary;
+        System.out.println(monthlyWage);
     }
 }
