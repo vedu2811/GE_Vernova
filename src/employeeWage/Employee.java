@@ -8,6 +8,7 @@ public class Employee {
     int dailySalary = 0;
     int monthlyWage=0;
     int workingDays=20;
+    int workingHours = 100;
     public void calculateAttendance(){
         if(((Math.random()*100)%3)==0){
             dailyAttendance=0;
@@ -36,7 +37,15 @@ public class Employee {
         }
     }
     public void monthlyWage(){
-        monthlyWage=workingDays*dailySalary;
+        int workingHoursNew=0;
+        if(dailyAttendance==1){
+            workingHoursNew=4*20;
+        }else if(dailyAttendance==2){
+            workingHoursNew=8*20;
+        }else if(dailyAttendance==0){
+            workingHoursNew=0;
+        }
+        monthlyWage=workingHoursNew>workingHours ? workingHours*hourlyPay : workingDays*dailySalary;
         System.out.println(monthlyWage);
     }
 }
