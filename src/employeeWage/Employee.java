@@ -42,8 +42,6 @@ public class Employee {
             workingHoursNew=4*20;
         }else if(dailyAttendance==2){
             workingHoursNew=8*20;
-        }else if(dailyAttendance==0){
-            workingHoursNew=0;
         }
         monthlyWage=workingHoursNew>workingHours ? workingHours*hourlyPay : workingDays*dailySalary;
         System.out.println(monthlyWage);
