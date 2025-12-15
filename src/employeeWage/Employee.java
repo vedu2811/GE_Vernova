@@ -4,11 +4,11 @@ public class Employee {
     int dailyAttendance;
     int workPerDay=8;
     int halfDay=4;
-    int hourlyPay=20;
+//    int hourlyPay=20;
     int dailySalary = 0;
     int monthlyWage=0;
-    int workingDays=20;
-    int workingHours = 100;
+//    int workingDays=20;
+//    int workingHours = 100;
     public void calculateAttendance(){
         if(((Math.random()*100)%3)==0){
             dailyAttendance=0;
@@ -21,29 +21,25 @@ public class Employee {
             System.out.println("Present");
         }
     }
-    public void dailyWage(){
-        switch(dailyAttendance){
+    public void dailyWage(String company,int hourlyPay, int workingDays, int workingHours) {
+        int workingHoursNew = 0;
+        switch (dailyAttendance) {
             case 1:
-                dailySalary=halfDay*hourlyPay;
-                System.out.println(dailySalary);
+                dailySalary = halfDay * hourlyPay;
+                workingHoursNew = 4 * 20;
+//                System.out.println(dailySalary);
                 break;
             case 2:
-                dailySalary=workPerDay*hourlyPay;
-                System.out.println(dailySalary);
+                dailySalary = workPerDay * hourlyPay;
+                workingHoursNew = 8 * 20;
+//                System.out.println(dailySalary);
                 break;
             default:
-                System.out.println("No Pay");
+//                System.out.println("No Pay");
+                workingHoursNew = 0;
                 break;
         }
-    }
-    public void monthlyWage(){
-        int workingHoursNew=0;
-        if(dailyAttendance==1){
-            workingHoursNew=4*20;
-        }else if(dailyAttendance==2){
-            workingHoursNew=8*20;
-        }
-        monthlyWage=workingHoursNew>workingHours ? workingHours*hourlyPay : workingDays*dailySalary;
-        System.out.println(monthlyWage);
+        monthlyWage = workingHoursNew > workingHours ? workingHours * hourlyPay : workingDays * dailySalary;
+        System.out.println("Company: "+ company+", Daily Salary: "+dailySalary+", Monthly wage: "+monthlyWage);
     }
 }
