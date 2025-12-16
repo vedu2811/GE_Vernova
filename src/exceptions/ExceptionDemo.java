@@ -3,14 +3,18 @@ package exceptions;
 import java.util.Scanner;
 
 public class ExceptionDemo {
-    public static void main(String[] args)throws Exception{
+    public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter a number");
         int a=sc.nextInt();
-        if(a%2==0){
-            throw new CustomException("Entered number is even");
-        }else{
-            System.out.println(a);
+        try{
+            if(a%2==0){
+                throw new CustomException("Entered number is even");
+            }else{
+                System.out.println(a);
+            }
+        }catch(CustomException e){
+            System.out.println("Custom Exception Caught");
         }
 //            int m, n;
 //            m = 5;
